@@ -1,7 +1,7 @@
-tilhom/phonebook-yii2
+jsondune/phonebook-yii2
 ============================
 
-Implementation of test task telephone directory using Yii 2
+Implementation of test task telephone directory using Yii2
 
 Statement of work: In this work want to create the program phone book containing the following information: full name, date of birth, notes, phone (mobile, home).
 
@@ -37,7 +37,7 @@ You can then install this project template using the following command:
 
 ~~~
 php composer.phar global require "fxp/composer-asset-plugin:~1.0.0"
-php composer.phar create-project --prefer-dist --stability=dev tilhom/phonebook-yii2 phonebook
+php composer.phar create-project --prefer-dist --stability=dev jsondune/phonebook-yii2 phonebook
 ~~~
 
 
@@ -51,9 +51,9 @@ Create the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=phonebook-yii2',
     'username' => 'root',
-    'password' => '1234',
+    'password' => '12345678',
     'charset' => 'utf8',
 ];
 ```
@@ -64,7 +64,7 @@ Also check and edit the other files in the `config/` directory to customize your
 
 After the establishment of the project in the working directory, you must run the migration:
 ~~~
-yii migration
+# yii migrate
 ~~~
 
 After migration, use the following administrator and user accounts:
@@ -81,7 +81,7 @@ Password: 123456
 
 To start the telephone book is in the working directory of the application, type the command:
 ```
-php -S localhost:8080 -t web
+# php -S localhost:8080 -t web
 ```
 
 Now you should be able to access the application through the following URL
@@ -98,19 +98,19 @@ To create and verify the tests you must switch to directory test/codeception and
 Then return to directory tests to build a test environment using the command:
 
 ```
-../vendor/bin/codecept build
+# ../vendor/bin/codecept build
 ```
 
 Make migration with command:
 
 ```
-codeception/bin/yii migrate
+# codeception/bin/yii migrate
 ```
 
 For example, to run basic template acceptance tests type command: 
 
 ```
-../vendor/bin/codecept run acceptance
+# ../vendor/bin/codecept run acceptance
 ```
 
 Please refer to instructions provided in app/tests/README.md
