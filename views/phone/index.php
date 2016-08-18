@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PhoneSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Phones';
+$this->title = 'หมายเลขโทรศัพท์';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="phone-index">
