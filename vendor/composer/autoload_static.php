@@ -10,6 +10,7 @@ class ComposerStaticInit1d4366ab425670518d3c88e3cda8757e
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7e702cccdb9dd904f2ccf22e5f37abae' => __DIR__ . '/..' . '/facebook/php-sdk-v4/src/Facebook/polyfills.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
@@ -27,14 +28,22 @@ class ComposerStaticInit1d4366ab425670518d3c88e3cda8757e
             'yii\\codeception\\' => 16,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
+            'yii2fullcalendar\\' => 17,
         ),
         'w' => 
         array (
             'wbraganca\\dynamicform\\' => 22,
         ),
+        'r' => 
+        array (
+            'rmrevin\\yii\\fontawesome\\' => 24,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+            'p2made\\theme\\sbAdmin\\' => 21,
+            'p2made\\demo\\' => 12,
+            'p2made\\' => 7,
         ),
         'm' => 
         array (
@@ -93,6 +102,7 @@ class ComposerStaticInit1d4366ab425670518d3c88e3cda8757e
         'R' => 
         array (
             'React\\Promise\\' => 14,
+            'Ramsey\\Uuid\\' => 12,
         ),
         'G' => 
         array (
@@ -150,15 +160,35 @@ class ComposerStaticInit1d4366ab425670518d3c88e3cda8757e
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'yii2fullcalendar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/philippfrenzel/yii2fullcalendar',
+        ),
         'wbraganca\\dynamicform\\' => 
         array (
             0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform/src',
+        ),
+        'rmrevin\\yii\\fontawesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+        ),
+        'p2made\\theme\\sbAdmin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/p2made/yii2-sb-admin-theme',
+        ),
+        'p2made\\demo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/p2made/yii2-p2y2-things-demo',
+        ),
+        'p2made\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/p2made/yii2-p2y2-things',
         ),
         'mdm\\admin\\' => 
         array (
@@ -320,6 +350,10 @@ class ComposerStaticInit1d4366ab425670518d3c88e3cda8757e
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
         ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
         'GuzzleHttp\\Stream\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
@@ -371,6 +405,13 @@ class ComposerStaticInit1d4366ab425670518d3c88e3cda8757e
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+            ),
+        ),
+        'M' => 
+        array (
+            'Moontoast\\Math' => 
+            array (
+                0 => __DIR__ . '/..' . '/moontoast/math/src',
             ),
         ),
         'H' => 

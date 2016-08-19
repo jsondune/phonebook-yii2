@@ -327,4 +327,49 @@ return array (
       '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
     ),
   ),
+  'rmrevin/yii2-fontawesome' => 
+  array (
+    'name' => 'rmrevin/yii2-fontawesome',
+    'version' => '2.15.1.0',
+    'alias' => 
+    array (
+      '@rmrevin/yii/fontawesome' => $vendorDir . '/rmrevin/yii2-fontawesome',
+    ),
+  ),
+  'philippfrenzel/yii2fullcalendar' => 
+  array (
+    'name' => 'philippfrenzel/yii2fullcalendar',
+    'version' => '2.5.3.0',
+    'alias' => 
+    array (
+      '@yii2fullcalendar' => $vendorDir . '/philippfrenzel/yii2fullcalendar',
+    ),
+  ),
+  'p2made/yii2-p2y2-things' => 
+  array (
+    'name' => 'p2made/yii2-p2y2-things',
+    'version' => '1.11.1.0',
+    'alias' => 
+    array (
+      '@p2made' => $vendorDir . '/p2made/yii2-p2y2-things',
+    ),
+  ),
+  'p2made/yii2-p2y2-things-demo' => 
+  array (
+    'name' => 'p2made/yii2-p2y2-things-demo',
+    'version' => '1.11.1.0',
+    'alias' => 
+    array (
+      '@p2made/demo' => $vendorDir . '/p2made/yii2-p2y2-things-demo',
+    ),
+  ),
+  'p2made/yii2-sb-admin-theme' => 
+  array (
+    'name' => 'p2made/yii2-sb-admin-theme',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@p2made/theme/sbAdmin' => $vendorDir . '/p2made/yii2-sb-admin-theme',
+    ),
+  ),
 );

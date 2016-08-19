@@ -26,7 +26,8 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                //'brandLabel' => 'My Company',
+                'brandLabel' => '<img src="../assets/images/Book-phones-icon-32x32.png" class="img-responsive pull-left"/>DOH Phonebook',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
