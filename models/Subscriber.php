@@ -139,7 +139,7 @@ class Subscriber extends \yii\db\ActiveRecord
             'person_type' => 'ประเภทบุคคล',
             'photo' => 'ไฟล์รูปภาพ',
             'job_title' => 'ตำแหน่ง',
-            'office' => 'หน่วยงาน (กอง)',
+            'office' => 'หน่วยงาน',
             'department' => 'ส่วนราชการ (กรม)',
             'province' => 'จังหวัด',
             'email' => 'อีเมล์ (E-Mail)',

@@ -34,15 +34,14 @@ use \yii\helpers\ArrayHelper;
 <div class="row">     
     <div class="col-lg-3 col-sm-3 col-sm-12 col-sm-12">   
     <?= $form->field($model, 'birth_date')->textInput() ?>
-    <?php   
-    //echo DatePicker::widget([
-        //'model' => $model,
-        //'attribute' => 'birth_date',
-        //'language' => 'th',
-        //'dateFormat' => 'yyyy-MM-dd',
-    //]);
-    ?>
-    </div>             
+    <!-- <?php echo DatePicker::widget([
+        'model' => $model,
+        'attribute' => 'birth_date',
+        'language' => 'th',
+        'dateFormat' => 'yyyy-MM-dd',
+    ]);
+    ?> -->
+    </div>    
     <div class="col-lg-6 col-sm-6 col-sm-6 col-sm-6">     
     <?= $form->field($model, 'job_title')->textInput(['maxlength' => true]) ?>        
     </div>              

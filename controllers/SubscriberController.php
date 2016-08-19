@@ -149,8 +149,6 @@ class SubscriberController extends Controller
 
             // if data validated & multiple files uploaded
             $file_photo = UploadedFile::getInstances($model, 'photo');
-            //debug
-            print "file_photo: " . $file_photo . "<br>";
             //if ($valid) {
             if ($valid && ($model->photo = $model->uploadPhoto($file_photo))) {
                 $transaction = \Yii::$app->db->beginTransaction();
@@ -263,9 +261,7 @@ class SubscriberController extends Controller
             $valid = Model::validateMultiple($modelsPhone) && $valid;
 
             // if data validated & multiple files uploaded
-            $file_photo = UploadedFile::getInstances($model, 'photo');
-            //debug
-            print "file_photo: " . $file_photo . "<br>";            
+            $file_photo = UploadedFile::getInstances($model, 'photo');        
             if ($valid && ($model->photo = $model->uploadPhoto($file_photo))) {
 
                 $transaction = \Yii::$app->db->beginTransaction();
