@@ -46,6 +46,7 @@ use Yii;
 class Subscriber extends \yii\db\ActiveRecord
 {
     // User-Defined constants: constants
+    const FILE_PATH = '/phonebook-yii2/web/uploads/';
     const THAI_YEAR_DIFF = 543;    
     const FISCAL_YEAR = 2559;
 
@@ -170,7 +171,7 @@ class Subscriber extends \yii\db\ActiveRecord
      * User-Defined functions
      */
     // FileUpload-Single-Photo
-    public function uploadPhoto($file_photo)
+    public function uploadPhoto($file_photos)
     {
         if ($this->validate()) { 
 
@@ -181,20 +182,24 @@ class Subscriber extends \yii\db\ActiveRecord
             //
             // Production Path (http://SERVER_NAME)
             //$file_path = '/htdocs/uploads/';
-			
-            //MD5 file name
-            //$file_name = (md5($file->baseName) . '.' . $file->extension);
-            //$file_name = $this->id . '-' . $this->person_type . '-' . $this->province . '.' . $file->extension;
-            $file_name = md5($this->id) . '.' . $file->extension;
-            $file_photo->saveAs($file_path . $file_name);           
-            return md5($file_photo->baseName) . '.' . $file_photo->extension;  
+            $file_names = [];
+            $file_counter = 0;
+            foreach ($file_photos as $file) {
+                $file_counter++;
+                // MD5 file name
+                //$file_name = $this->id.'-'.$this->person_type.'-'.$this->province.'-'.$file_counter.'.'.$file->extension;
+                $file_name = md5($file->baseName).'.'.$file->extension;
+                $file->saveAs($file_path . $file_name);      
+                $file_names[] = $file_name;
+            } //end foreach
+            return implode(',', $file_names);  
         } else {
             return false;
         }
     }
 
-    // FileUpload-MultipleFile
-    public function uploadMultiple($file_photos)
+    // FileUpload-Multiple-Photos
+    public function uploadMultiplePhoto($file_photos)
     {
         if ($this->validate()) { 
 
@@ -205,14 +210,13 @@ class Subscriber extends \yii\db\ActiveRecord
             //
             // Production Path (http://SERVER_NAME)
             //$file_path = '/htdocs/uploads/';
-			
             $file_names = [];
             $file_counter = 0;
             foreach ($file_photos as $file) {
                 $file_counter++;
-                //MD5 file name
-                //$file_name =  $this->id . '-' . $this->person_type . '-' . $this->province . '_' . $file_counter . '.' . $file->extension;
-                $file_name = md5($file->baseName) . '.' . $file->extension;
+                // MD5 file name
+                //$file_name = $this->id.'-'.$this->person_type.'-'.$this->province.'-'.$file_counter.'.'.$file->extension;
+                $file_name = md5($file->baseName).'.'.$file->extension;
                 $file->saveAs($file_path . $file_name);      
                 $file_names[] = $file_name;
             } //end foreach
@@ -223,15 +227,23 @@ class Subscriber extends \yii\db\ActiveRecord
     }
 
     // FileUpload-Single-Photo
-    public function getUploadPhoto() {
+    public function edPhoto() {
         // FileUpload-Path                                 
         //return Yii::getAlias('@webroot') . '/uploads/' . $this->photo;
         //return Yii::getAlias('@appRoot') . '/uploads/' . $this->photo;  
-        return '/phonebook-yii2/web/uploads/' . $this->photo;       
+        return $this->photo;       
     }
 
+    // FileUpload-Single-Photo with HTML Link
+    public function getUploadedPhotoHtml() {
+        // FileUpload-Path                                 
+        //return Yii::getAlias('@webroot') . '/uploads/' . $this->photo;
+        //return Yii::getAlias('@appRoot') . '/uploads/' . $this->photo;      
+        return (($this->photo!="") ? Html::a(($this->photo), (Subscriber::FILE_PATH.$this->photo), ['target' => '_blank']) : "");  
+    }    
+
     // FileUpload-Multiple-Photos
-    public function getUploadPhotos() {
+    public function getUploadedMultiplePhoto() {
         // FileUpload-Path
         //$file_path = Yii::getAlias('@webroot');
         //$file_path = Yii::getAlias('@appRoot') . '/uploads/';    
@@ -243,6 +255,20 @@ class Subscriber extends \yii\db\ActiveRecord
         } //end foreach
         return $file_photos;
     }
+
+    // FileUpload-Multiple-Photos with HTML Link
+    public function getUploadedMultiplePhotoHtml() {
+        // FileUpload-Path
+        //$file_path = Yii::getAlias('@webroot');
+        //$file_path = Yii::getAlias('@appRoot') . '/uploads/';    
+        $file_path = '/phonebook-yii2/web/uploads/';         
+        $items = explode(',', $this->photo);
+        $file_photos = ''; // Clear value
+        foreach ($items as $file_key => $file_value) {
+            $file_photos .= (($file_value!="") ? Html::a(($file_value), ($file_path.$file_value), ['target' => '_blank']) : "") . "<br/>";  
+        } //end foreach
+        return $file_photos;
+    }    
 
     public function stringToArray($value){
       return empty($value) ? null :explode(',', $value);

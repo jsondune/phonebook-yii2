@@ -147,10 +147,17 @@ class SubscriberController extends Controller
             $valid = $model->validate();
             $valid = Model::validateMultiple($modelsPhone) && $valid;
 
-            if ($valid) {
+            // if data validated & multiple files uploaded
+            $file_photo = UploadedFile::getInstances($model, 'photo');
+            //debug
+            print "file_photo: " . $file_photo . "<br>";
+            //if ($valid) {
+            if ($valid && ($model->photo = $model->uploadPhoto($file_photo))) {
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
                     if ($flag = $model->save(false)) {
+                        // Place here your code to delete uploaded file(s) here 
+                        // ...                      
                         foreach ($modelsPhone as $modelPhone) {
                             $modelPhone->subscriber_id = $model->id;
                             if (! ($flag = $modelPhone->save(false))) {
@@ -256,15 +263,17 @@ class SubscriberController extends Controller
             $valid = Model::validateMultiple($modelsPhone) && $valid;
 
             // if data validated & multiple files uploaded
-            $file_photos = UploadedFile::getInstances($model, 'photo');
-            if ($valid && ($model->photo = $model->uploadMultiple($file_photos))) {
+            $file_photo = UploadedFile::getInstances($model, 'photo');
+            //debug
+            print "file_photo: " . $file_photo . "<br>";            
+            if ($valid && ($model->photo = $model->uploadPhoto($file_photo))) {
 
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
                     if ($flag = $model->save(false)) {
                         if (! empty($deletedIDs)) {
                             Phone::deleteAll(['id' => $deletedIDs]);
-                            // Should place code to delete uploaded file(s) here 
+                            // Place here your code to delete uploaded file(s) here 
                             // ...
                         }
                         foreach ($modelsPhone as $modelPhone) {

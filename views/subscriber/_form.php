@@ -91,7 +91,7 @@ use \yii\helpers\ArrayHelper;
     <?= $form->field($model, 'line_id')->textInput(['maxlength' => true]) ?>
     </div>              
     <div class="col-lg-5 col-sm-5 col-sm-12 col-sm-12">            
-    <?= $model->isNewRecord ? '' : '<span class="bg-danger" style="font-weight:bold">รูปภาพปัจจุบัน:</span><br>'.$model->getUploadPhoto().'<br>' ?>
+    <?= $model->isNewRecord ? '' : '<span class="bg-danger" style="font-weight:bold">ไฟล์รูปภาพปัจจุบัน:</span><br>'.$model->getUploadedPhotoHtml().'<br>' ?>
     <?= $form->field($model, 'photo')->fileInput(['multiple' => false]) ?>    
     </div>                 
 </div>        
