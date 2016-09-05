@@ -113,4 +113,4 @@ For example, to run basic template acceptance tests type command:
 # ../vendor/bin/codecept run acceptance
 ```
 
-Please refer to instructions provided in app/tests/README.md
+Please refer to instructions provided in app/tests/README.md"# inspection" 
